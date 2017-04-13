@@ -63,13 +63,14 @@ class SRSA:
         from functools import reduce
         return reduce(lcm, numbers, 1)
 
-    def egcd(self, a, b):
-        """"Um... it's egcd. I don't know what it stands for, but it works."""
+    # https: // en.wikipedia.org / wiki / Extended_Euclidean_algorithm
+    def extended_greatest_common_divisor(self, a, b):
+        """Returns the greatest common divisor and two other complicated numbers        """
 
         if a == 0:
             return b, 0, 1
         else:
-            g, y, x = self.egcd(b % a, a)
+            g, y, x = self.extended_greatest_common_divisor(b % a, a)
             return g, x - (b // a) * y, y
 
     def modular_inverse(self, a, m):
