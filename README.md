@@ -12,7 +12,7 @@ Run [decrypt.py](https://github.com/Kalman98/simple-rsa/blob/master/decrypt.py),
 
 
 ## About
-I started this project for fun when I was learning about RSA encryption. I wanted to prove to myself that I understood how it worked, and once I had done that, I decided to clean it up and push it to GitHub so maybe somebody else can learn from what I have. This is mostly meant as an educational project - *I do not make any guarantees that this technology will keep your information safe!*  To the best of my knowledge on encryption so far, it _should_ work fine if used properly. But don't use this project for anything important, please. Just learning. :) Whoa, my first ever text emoji. I must be changing.
+I started this project for fun when I was learning about RSA encryption. I wanted to prove to myself that I understood how it worked, and once I had done that, I decided to clean it up and push it to GitHub so maybe somebody else could learn from what I have. This is mostly meant as an educational project - *I do not make any guarantees that this technology will keep your information safe!*  To the best of my knowledge on encryption so far, it _should_ work fine if used properly. But don't use this project for anything important, please. Just learning. :) Whoa, my first ever text emoji. I must be changing.
 
 
 If you want more information on RSA encryption, [Wikipedia's RSA page](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) is a great place to start. That's where I got all of the information I needed to create this project.
