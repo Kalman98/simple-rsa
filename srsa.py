@@ -3,17 +3,21 @@ from random import randint
 
 class SRSA:
     def __init__(self):
-        # p = int(input("Please enter a prime number: "))
 
-        # if p == 0:
-        #   print((65 ** 17) % 1003)
-        #  return
-        # if p == 1:
-        #   print((745 ** 413) % 1003)
-        #  return
-        # q = int(input("Please enter another prime number: "))
-        p = 279605045019893249881628621028381877897
-        q = 210226533302810226362124704524479730699
+        # this part of the code simply requests prime numbers from the user. If they don't
+        # type anything, we use preset numbers, which will still give mostly random
+        # keys in the end - though not near as much variance as with custom primes
+        p = input("Please enter a prime number (leave blank for default prime): ")
+        q = input("Please enter another prime number (leave blank for default prime): ")
+
+        if p == "":
+            p = 279605045019893249881628621028381877897
+        else:
+            p = int(p)
+        if q == "":
+            q = 210226533302810226362124704524479730699
+        else:
+            q = int(q)
         print("generating public key...")
 
         # n = pq. This will be our modulus when encrypting/decrypting later - so remember it!
@@ -76,7 +80,7 @@ class SRSA:
     def modular_inverse(self, a, m):
         """"Returns the modular inverse of a % m."""
 
-        g, x, y = self.egcd(a, m)
+        g, x, y = self.extended_greatest_common_divisor(a, m)
         if g != 1:
             raise Exception('modular inverse does not exist')
         else:
