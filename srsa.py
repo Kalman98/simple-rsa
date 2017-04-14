@@ -18,15 +18,15 @@ class SRSA:
             q = 210226533302810226362124704524479730699
         else:
             q = int(q)
-        print("generating public key...")
+        print("generating keys...")
 
         # n = pq. This will be our modulus when encrypting/decrypting later - so remember it!
         n = p * q
-        print("n equals " + str(n))
+        print("n (modulus) equals " + str(n))
 
         # self explanatory, 't' is equal to the least common multiple of (p - 1) and (q - 1)
         t = self.least_common_multiple(p - 1, q - 1)
-        print("t equals " + str(t))
+        print("t (insignificant) equals " + str(t))
 
         # here we want 'e' to be equal to a number that has _no_ factors in common
         # with 't', besides the necessary '1' that all numbers have in common
@@ -39,7 +39,6 @@ class SRSA:
                     fail = False
 
         print("e (public key) is " + str(e))
-        print("generating private key...")
 
         # d is set to a modular inverse of (e % t). Simply put, this means that (ed % t) = 1
         # https://en.wikipedia.org/wiki/Modular_multiplicative_inverse
