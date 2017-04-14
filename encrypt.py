@@ -20,7 +20,7 @@ class Encrypt:
                     # on the chance that the character ID is only two numbers long, we here insert
                     # a 0 so that the decryptor can easily find all of the three-number segments
                     # without having changed any values
-                    data += data + "0"
+                    data += "0"
                 data += str(ord(i))
 
             print("ASCII number: " + data)
