@@ -16,17 +16,16 @@ class Decrypt:
             # message that was encrypted with the twin public key (assuming your keys
             # are secure enough)
             data = str(pow(num, pri, mod))
-            print("Decrypted ASCII number: " + data)
 
             # we just need to do some fancy formatting to convert the ASCII numbers
             # back into readable text
             res = ""
             # if the first digit was a 0, it would have been removed during encryption.
             # Here we check if the string is divisible by 3, and if not, put the 0 back
-            if len(data) % 3 == 0:
-                char = ""
-            else:
-                char = "0"
+            if len(data) % 3 != 0:
+                data = "0" + data
+            char = ""
+            print("Decrypted ASCII number: " + data)
             for count in range(len(data)):
                 if (count + 1) % 3 == 0:
                     char += data[count]
