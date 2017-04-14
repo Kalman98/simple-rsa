@@ -21,7 +21,12 @@ class Decrypt:
             # we just need to do some fancy formatting to convert the ASCII numbers
             # back into readable text
             res = ""
-            char = ""
+            # if the first digit was a 0, it would have been removed during encryption.
+            # Here we check if the string is divisible by 3, and if not, put the 0 back
+            if len(data) % 3 == 0:
+                char = ""
+            else:
+                char = "0"
             for count in range(len(data)):
                 if (count + 1) % 3 == 0:
                     char += data[count]
